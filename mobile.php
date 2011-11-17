@@ -53,6 +53,18 @@ function matchcart(){
 }
 matchcart();
 
+function matchcheckoutsuccess(){
+	global $zv_orders_id, $orders_id, $orders, $define_page;
+	$subject = $_SERVER['REQUEST_URI'];
+	$pattern = '/index.php\?main_page=checkout_success/';
+	preg_match($pattern, $subject, $matches);
+	if ($matches) {
+		include 'mobile/checkoutsuccess.php';
+		die();
+	}
+}
+matchcheckoutsuccess();
+
 function matchminicart(){
 	$subject = $_SERVER['REQUEST_URI'];
 	$pattern = '/minicart.php/';
