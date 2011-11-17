@@ -31,7 +31,7 @@ $subcategories = zen_get_categories('', $current_category_id);
 <?php
 
 $listing_split = new splitPageResults($listing_sql, MAX_DISPLAY_PRODUCTS_LISTING, 'p.products_id', 'page');
-print_r ($listing_split);
+//print_r ($listing_split);
 $listing = $db->Execute($listing_split->sql_query);
 $productcheck = $listing->fields['products_id'];
 
