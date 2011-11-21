@@ -1,10 +1,11 @@
 <?php
 
-  require('includes/application_top.php');
+	define('SKIP_SINGLE_PRODUCT_CATEGORIES', 'False');
+	require('includes/application_top.php');
   
-  $language_page_directory = DIR_WS_LANGUAGES . $_SESSION['language'] . '/';
-  $directory_array = $template->get_template_part($code_page_directory, '/^header_php/');
-  foreach ($directory_array as $value) { 
+	$language_page_directory = DIR_WS_LANGUAGES . $_SESSION['language'] . '/';
+	$directory_array = $template->get_template_part($code_page_directory, '/^header_php/');
+	foreach ($directory_array as $value) { 
 /**
  * We now load header code for a given page. 
  * Page code is stored in includes/modules/pages/PAGE_NAME/directory 
@@ -13,10 +14,12 @@
     require($code_page_directory . '/' . $value);
   }
   
-//$device = $_SERVER['template'];
-//echo "this device is a $device";
-//$pagename = $_SERVER['REQUEST_URI'];
-//echo "page url: $pagename";
+/* Debugging
+$device = $_SERVER['template'];
+echo "this device is a $device";
+$pagename = $_SERVER['REQUEST_URI'];
+echo "page url: $pagename";
+*/
 ?>
 
 <?php
